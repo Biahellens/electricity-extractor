@@ -62,10 +62,16 @@ Para extrairmos os dados das faturas de eletricidade precisa roda apenas o segui
 $ npm run extract
 ```
 
+E por fim podemos preencher o banco de dados:
+
+```bash
+$ npm run seed:faturas 
+```
+
 Por fim podemos inicializar a nossa aplicação:
 
 ```bash
-$ yarn start
+$ npm run dev
 ```
 
 ## Client
