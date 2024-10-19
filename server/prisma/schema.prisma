@@ -17,13 +17,15 @@ model FaturaEnergia {
   id               Int      @id @default(autoincrement())
   nCliente         String
   mesRef           String
-  energiaEletricaQuantidade Float
-  energiaEletricaValor      Float
-  energiaSCEEEQuantidade    Float
-  energiaCompensadaValor    Float
-  contribIlumPM             Float
-  pdfFatura                 String
-  valotTotal                Float
+  energiaEletricaQuantidade     Float
+  energiaEletricaValor          Float
+  energiaSCEEEQuantidade        Float
+  energiaSCEEEValor             Float
+  energiaCompensadaQuantidade   Float
+  energiaCompensadaValor        Float
+  contribIlumPM                 Float
+  pdfFatura                     String
+  valorTotal                    Float
 
   @@map("fatura_energia")
 }
