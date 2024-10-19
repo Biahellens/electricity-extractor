@@ -13,6 +13,7 @@ interface DadosFatura {
   energiaCompensadaValor: number;
   contribIlumPM: number;
   valorTotal: number;
+  pdfFatura: string
 }
 
 const pastaPDFs = 'extractedData/data';
@@ -31,7 +32,7 @@ function salvarProcessados(processados: Set<string>) {
   fs.writeFileSync(arquivoProcessados, JSON.stringify(Array.from(processados)));
 }
 
-async function lerPdfEExtrairDados(texto: string): Promise<DadosFatura | null> {
+async function lerPdfEExtrairDados(texto: string, filePath: string): Promise<DadosFatura | null> {
   let nCliente = ''
   let mesRef = ''
 
@@ -47,6 +48,9 @@ async function lerPdfEExtrairDados(texto: string): Promise<DadosFatura | null> {
   let valorTotal = 0
 
   try {
+    const file = fs.readFileSync(filePath)
+    const pdfFatura = file.toString('base64')
+
     const linhas = texto.split('\n');
     for (let i = 0; i < linhas.length; i++) {
       const linha = linhas[i];
@@ -113,6 +117,7 @@ async function lerPdfEExtrairDados(texto: string): Promise<DadosFatura | null> {
       energiaCompensadaValor,
       contribIlumPM,
       valorTotal,
+      pdfFatura,
     };
 
     return dadosFatura
@@ -133,7 +138,7 @@ async function processarPDF(pdfPath: string, processados: Set<string>) {
   const buffer = fs.readFileSync(pdfPath);
   const dadosPDF = await pdfParse(buffer);
 
-  const dadosFatura = await lerPdfEExtrairDados(dadosPDF.text);
+  const dadosFatura = await lerPdfEExtrairDados(dadosPDF.text, pdfPath);
     if (dadosFatura) {
       dadosFaturas.push(dadosFatura);
     }

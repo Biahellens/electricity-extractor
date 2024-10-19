@@ -6,7 +6,8 @@
     "dev": "ts-node src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
-    "extract": "npx ts-node extractedData/index.ts"
+    "extract": "npx ts-node extractedData/index.ts",
+    "seed:faturas": "ts-node src/seedFaturas.ts"
   },
   "keywords": [],
   "author": "",
