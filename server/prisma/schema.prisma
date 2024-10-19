@@ -23,6 +23,7 @@ model FaturaEnergia {
   energiaCompensadaValor    Float
   contribIlumPM             Float
   pdfFatura                 String
+  valotTotal                Float
 
   @@map("fatura_energia")
 }
