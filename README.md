@@ -56,6 +56,8 @@ $ npx prisma generate
 
 #### Extrair dados das faturas:
 
+Observação: deve ser criada uma pasta chamada `data` dentro de `server/extractedData`, e nele você vai alimentar com os pdf das faturas, para o padrão de faturas utilizado de base deve funcionar perfeitamente a extração de dados.
+
 Para extrairmos os dados das faturas de eletricidade precisa roda apenas o seguinte comando:
 
 ```bash
