@@ -2,44 +2,31 @@ import styled from "styled-components";
 
 export const Content = styled.div`
   width: 100vw;
-  height: 3.4rem;
-  background: #2E8B57;
-  top: 0;
-  position: fixed;
   display: flex;
-  align-items: center;
-  padding: 0.5rem;
+  flex-direction: column;
+  align-items: flex-start;
 `
 
 export const Title = styled.text`
-  font-size: 1.4rem;
-  color: #ffffff;
-  font-weight: bold;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #A9A9A9
 `
-
-export const BtnRedirect = styled.button`
-  font-size: 1rem;
-  color: #ffffff;
-  font-weight: bold;
-  background: transparent;
-  border: none;
+export const ContentCards = styled.div`
+  width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: center ;
-  cursor: pointer;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 7.5rem;
 `
 
-export const ContainerBack = styled.div`
-  width: 20rem;
-  height: 3.4rem;
-  background: #228B22;
-  right: 0;
-  position: fixed;
+export const Card = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-
-  @media (max-width: 768px) {
-    width: 10rem;
-  }
+  width: 35%;
+  height: 20rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: -4px 6px 6.8px -4px rgba(0, 0, 0, 0.17);
 `
