@@ -70,19 +70,37 @@ E por fim podemos preencher o banco de dados:
 $ npm run seed:faturas 
 ```
 
-Por fim podemos inicializar a nossa aplicação:
+Por fim podemos inicializar a nosso server:
 
 ```bash
 $ npm run dev
 ```
 
 ## Client
+O frontend foi construido com React, React-router-dom, styled-components, react-icons, chart.js  utilizando o template typescript. Primeiramente vamos instalar as dependências através do seguinte comando:
+
+```bash
+$ cd client
+$ npm install
+```
+
+agora na raiz do client crie um arquivo `.env` com o seguinte conteúdo:
+
+```
+  VITE_APP_BASE_URL_API=http://localhost:3000
+```
+
+Por fim podemos inicializar a nosso client:
+
+```bash
+$ npm run dev
+```
 
 ### Executando a aplicação
 
 Agora com a aplicação configurada é possível acessa-la através da seguinte URL para ver se esta tudo certo:
 
-- 
+- http://localhost:5173
 
 E poderá acessar a API em:
-- http://localhost:4000/
+- http://localhost:3000
