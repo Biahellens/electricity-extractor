@@ -1,10 +1,21 @@
 import express from 'express';
+import cors from 'cors';
 import invoceRoutes from './routes/eletricityRoutes';
 
 const app = express();
 
-app.use(express.json());
+(async () => {
 
-app.use('/api', invoceRoutes);
+  app.use(
+    cors({
+      origin: 'http://localhost:5173',
+      credentials: true,
+    })
+  );
 
-export default app;
+  app.use(express.json());
+
+  app.use('/api', invoceRoutes);
+})()
+
+export default app
